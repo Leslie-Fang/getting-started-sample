@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+x-sap-ui5-ScmRevision: 
+Bundle-Version: 1.40.1
+Build-Jdk: 1.6.0_51
+Built-By: ppurple
+Created-By: Apache Maven 3.0.5
+x-sap-ui5-BuildTimestamp: 201607041523
+x-sap-ui5-Version: 1.40.1
+Archiver-Version: Plexus Archiver
+

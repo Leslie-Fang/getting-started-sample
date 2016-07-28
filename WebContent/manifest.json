@@ -1,0 +1,102 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+	"_version": "1.1.0",
+	"id": "sap.ui.demo.wt",
+	"type": "application",
+	"i18n": "i18n/i18n.properties",
+	"title": "{{appTitle}}",
+	"description": "{{appDescription}}",
+	"applicationVersion": {
+	  "version": "1.0.0"
+	}
+  },
+  "sap.ui": {
+	"_version": "1.1.0",
+	"technology": "UI5",
+	"deviceTypes": {
+	  "desktop": true,
+	  "tablet": true,
+	  "phone": true
+	},
+	"supportedThemes": [
+	  "sap_bluecrystal"
+	]
+  },
+  "sap.ui5": {
+	"_version": "1.1.0",
+	"rootView": "sap.ui.demo.wt.view.app",
+	"dependencies": {
+	  "minUI5Version": "1.30",
+	  "libs": {
+		"sap.m": {}
+	  }
+	},
+	"models": {
+	  "i18n": {
+		"type": "sap.ui.model.resource.ResourceModel",
+		"settings": {
+		  "bundleName": "sap.ui.demo.wt.i18n.i18n"
+		}
+	  },
+	  "invoice": {
+		"type": "sap.ui.model.json.JSONModel",
+		"uri": "Invoice.json"
+	  }
+	},
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "sap.ui.demo.wt.view",
+		"controlId": "app",
+		"controlAggregation": "pages"
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "login",
+		  "target": "login"
+		},
+		{
+		  "pattern": "detail",
+		  "name": "detail",
+		  "target": "detail"
+		}
+		,
+		{
+		  "pattern": "MainMenu",
+		  "name": "MainMenu",
+		  "target": "MainMenu"
+		},
+		{
+		  "pattern": "CreatTRPData",
+		  "name": "CreatTRPData",
+		  "target": "CreatTRPData"
+		},
+		{
+		  "pattern": "ShowMData",
+		  "name": "ShowMData",
+		  "target": "ShowMData"
+		}
+	  ],
+	  "targets": {
+		"login": {
+		  "viewName": "Login"
+		},
+		"detail": {
+		  "viewName": "InvoiceList"
+		},
+		"MainMenu": {
+		  "viewName": "MainMenu"
+		},
+		"CreatTRPData": {
+		  "viewName": "CreatTRPData"
+		},
+		"ShowMData": {
+		  "viewName": "ShowMData"
+		}
+	  }
+	}
+  }
+}

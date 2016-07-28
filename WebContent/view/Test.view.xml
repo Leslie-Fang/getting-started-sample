@@ -1,0 +1,57 @@
+<mvc:View
+   controllerName="sap.ui.demo.wt.controller.app"
+   xmlns="sap.m"
+   xmlns:common="sap.ui.commons"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:layout="sap.ui.layout"
+   xmlns:form="sap.ui.layout.form"
+   displayBlock="true">
+   <form:SimpleForm layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4"
+		labelSpanS="12"
+		emptySpanL="3"
+		emptySpanM="2"
+		emptySpanS="0"
+		columnsL="1"
+		columnsM="1">
+		<form:content>
+			<Label text="Host" />
+			<common:TextField id="hostname" value="10.58.184.216" />
+		
+			<Label text="Instance Number" />
+			<common:TextField id="InsatnceNum" value="01"/>
+		
+			<Label text="User ID" />
+			<common:TextField id="username" value="1" />
+
+			<Label text="Password" />
+			<common:TextField id="password" value="1" />
+
+			<Label />
+			<Button id="loginBtn" text="Login" style="Emph" press="onLogin">
+				<layoutData>
+					<layout:GridData spanL="1" spanM="2" spanS="4" />
+				</layoutData>
+			</Button>
+		</form:content>
+	</form:SimpleForm>
+        	   <Panel
+                  headerText="{i18n>helloPanelTitle2}"
+                  class="sapUiResponsiveMargin"
+				  width="auto">
+                  <content>       
+               		<Text text="UserName"
+               		class="sapUiSmallMargin"/>
+				    <Input
+						value="{/recipient}"
+						valueLiveUpdate="true"
+						width="60%"/>
+					<Button
+						text="Say Hello"
+						press="onShowHello"
+						class="sapUiSmallMarginEnd"/>
+					</content>
+               </Panel>       	  
+ </mvc:View>

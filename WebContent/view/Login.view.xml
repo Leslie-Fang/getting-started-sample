@@ -1,0 +1,50 @@
+<mvc:View
+   controllerName="sap.ui.demo.wt.controller.login"
+   xmlns="sap.m"
+   xmlns:common="sap.ui.commons"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:layout="sap.ui.layout"
+   xmlns:form="sap.ui.layout.form"
+   displayBlock="true"> 
+   <Page title="{i18n>homePageTitle}">
+	<form:SimpleForm layout="ResponsiveGridLayout"
+		labelSpanL="4"
+		labelSpanM="4"
+		labelSpanS="12"
+		emptySpanL="3"
+		emptySpanM="2"
+		emptySpanS="0"
+		columnsL="1"
+		columnsM="1">
+		<form:content>
+			<Label text="HostName" />
+			<Input
+				value="{form>/credential/hostname}"/>
+		
+			<Label text="InstanceNumber" />
+			<Input
+				value="{form>/credential/InsatnceNum}"/>
+				
+			<Label text="UserName" />
+			<Input
+				placeholder="Enter username ..." 
+				value="{form>/credential/username}"/>			
+
+			<Label text="Password" />
+			<Input
+				type="Password"
+				placeholder="Enter password ..." 
+				value="{form>/credential/password}"/>
+
+			<Label />
+			<Button id="loginBtn" text="Login" style="Emph" press="onLogin">
+				<layoutData>
+					<layout:GridData spanL="1" spanM="2" spanS="4" />
+				</layoutData>
+			</Button>
+		</form:content>
+	</form:SimpleForm>    	  
+	</Page>
+   
+ </mvc:View>
