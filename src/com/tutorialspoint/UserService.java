@@ -20,6 +20,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Vector;
+import com.sap.tm.trp.*;
 
 @Path("/UserService")
 public class UserService {
@@ -70,60 +71,64 @@ public class UserService {
        return "True";
    }
    
-   @GET
+   @POST
    @Path("/CLF")
    @Produces(MediaType.TEXT_PLAIN)
-   public String getItp(){
+   public String getItp(String message){
 	   try{
+		 System.out.println(message);
 	     CreatLocationFilter  LF=new CreatLocationFilter ();
-	     LF.CreatLF();	        
+	     if(!LF.CreatLF()){return "Create LocationFilter Failed! \n LocationFilter exists.";};	        
 	   }
 	   catch(Exception e){
-		   return "Wrong!";
+		   return "Create LocationFilter Failed! LocationFilter exists.";
 	   };
-       return "Create LF!";
+       return "Create LocationFilter Success!";
    }
    
-   @GET
+   @POST
    @Path("/DLF")
    @Produces(MediaType.TEXT_PLAIN)
-   public String DeleteLF(){
+   public String DeleteLF(String message){
 	   try{
+		 System.out.println(message);
 	     CreatLocationFilter  LF=new CreatLocationFilter ();        
-	     LF.DeleteLF();	        
+	     if(!LF.DeleteLF()){return "Delete LocationFilter Failed!";};	        
 	   }
 	   catch(Exception e){
-		   return "Wrong!";
+		   return "Delete LocationFilter Failed!";
 	   };
-       return "Delete LF!";
+       return "Delete LocationFilter Success!";
    }
    
-   @GET
+   @POST
    @Path("/CRF")
    @Produces(MediaType.TEXT_PLAIN)
-   public String CreateRF(){
+   public String CreateRF(String message){
 	   try{
+		   System.out.println(message);
 		   CreatResourceFilter  RF=new CreatResourceFilter ();        
-	     RF.CreateRF();	        
+		   if(!RF.CreateRF()){return "Create ResourceFilter Failed! ResourceFilter exists.";};	        
 	   }
 	   catch(Exception e){
-		   return "Wrong!";
+		   return "Create ResourceFilter Failed! ResourceFilter exists.";
 	   };
-       return "Create RF!";
+	   return "Create ResourceFilter Success!";
    }
    
-   @GET
+   @POST
    @Path("/DRF")
    @Produces(MediaType.TEXT_PLAIN)
-   public String DeleteRF(){
+   public String DeleteRF(String message){
 	   try{
+		   System.out.println(message);
 		   CreatResourceFilter  RF=new CreatResourceFilter ();         
-	     RF.DeleteRF();	        
+		   if(!RF.DeleteRF()){return "Delete ResourceFilter Failed!";};	        
 	   }
 	   catch(Exception e){
-		   return "Wrong!";
+		   return "Delete ResourceFilter Failed!";
 	   };
-       return "Delete RF!";
+	   return "Delete ResourceFilter Success!";
    }
    
    @Path("/GetRsrcCatgry")
@@ -161,4 +166,56 @@ public class UserService {
        return result;
    }
    
+   @POST
+   @Path("/ABAPT")
+   @Produces(MediaType.TEXT_PLAIN)
+   public String ABAPTest(String message){
+	   System.out.println(message);
+	   try{
+		   TestTMBapi  a=new TestTMBapi();
+		   a.test();
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "Create ResourceFilter Failed! ResourceFilter exists.";
+	   };
+	   System.out.println("success!");
+	   return "call abap!";
+   }
+   
+   @POST
+   @Path("/TESTABAPT")
+   @Produces("application/json")
+   public String ABAPTest2(String message){
+	   System.out.println(message);
+	   String result;
+	   try{
+		   TestTMS  a=new TestTMS();
+		   result=a.test();
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "Create ResourceFilter Failed! ResourceFilter exists.";
+	   };
+	   System.out.println("success!");
+	   return result;
+   }
+   
+   @POST
+   @Path("/MyABAPT")
+   @Produces("application/json")
+   public String ABAPMyTest2(String message){
+	   System.out.println(message);
+	   String result;
+	   try{
+		   TestMyAbap  a=new TestMyAbap();
+		   result=a.test();
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "Create ResourceFilter Failed! ResourceFilter exists.";
+	   };
+	   System.out.println("success!");
+	   return result;
+   }
 }

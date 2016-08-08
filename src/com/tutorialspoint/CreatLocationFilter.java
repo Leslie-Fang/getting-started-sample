@@ -15,7 +15,7 @@ import java.util.Vector;
  */
 public class CreatLocationFilter {
     static Vector LFID=new Vector();
-    void CreatLF() throws Exception {
+    boolean CreatLF() throws Exception {
        // String url="http://10.58.184.216:8001/sap/tm/trp/service/user/locationFilters.json";
         String url="http://"+UserService.hostname+":80"+UserService.InsatnceNum+"/sap/tm/trp/service/user/locationFilters.json";
         URL obj=new URL(url);
@@ -87,13 +87,20 @@ public class CreatLocationFilter {
             JSONObject outjson2 = new JSONObject(outjson.getString("data"));
             LFID.add(outjson2.getString("ID"));
             System.out.println(outjson2.getString("ID"));
+            return true;
         } else {
             System.out.println(con.getResponseMessage());
+            return false;
         }
     }
 
-    void DeleteLF() throws Exception{
+    boolean DeleteLF() throws Exception{
         System.out.println(LFID.size());
+        boolean suc=true;
+        if(LFID.size() ==0)
+        {
+        	return false;
+        }
         while (LFID.size() !=0)
         {
             String DeletID=(String)LFID.firstElement();
@@ -114,11 +121,26 @@ public class CreatLocationFilter {
             System.out.println(HttpResult);
             if(HttpResult==204) {
                 System.out.println("Delete "+DeletID+" successfully!");
+                suc=true;
             }
             else {
-                System.out.println("Delete failed!");
+                System.out.println("Delete failed!");  
+                suc=false;
             }
+           // System.out.println(LFID.size());
             LFID.removeElementAt(0);
+        }
+       // System.out.println("Test");  
+       // System.out.println(suc);  
+        if(suc ==true)
+        {
+        //	System.out.println("Test true");  
+        	return true;
+        }
+        else
+        {
+        //	System.out.println("Test false");  
+        	return false;
         }
     }
 }

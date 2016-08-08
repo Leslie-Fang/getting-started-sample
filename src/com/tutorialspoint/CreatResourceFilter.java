@@ -16,7 +16,7 @@ import java.util.Vector;
  */
 public class CreatResourceFilter {
     static Vector RFID=new Vector();
-    public void CreateRF() throws Exception{
+    public boolean CreateRF() throws Exception{
         //String url="http://10.58.184.216:8001/sap/tm/trp/service/user/resourceFilters.json";
         String url="http://"+UserService.hostname+":80"+UserService.InsatnceNum+"/sap/tm/trp/service/user/resourceFilters.json";
         URL obj=new URL(url);
@@ -73,13 +73,20 @@ public class CreatResourceFilter {
             JSONObject outjson2 = new JSONObject(outjson.getString("data"));
             RFID.add(outjson2.getString("ID"));
             System.out.println(outjson2.getString("ID"));
+            return true;
         } else {
             System.out.println(con.getResponseMessage());
+            return false;
         }
     }
 
-    public void DeleteRF() throws Exception{
+    public boolean DeleteRF() throws Exception{
         System.out.println(RFID.size());
+        boolean suc=true;
+        if(RFID.size() ==0)
+        {
+        	return false;
+        }
         while (RFID.size() !=0)
         {
             String DeletID=(String)RFID.firstElement();
@@ -100,11 +107,23 @@ public class CreatResourceFilter {
             System.out.println(HttpResult);
             if(HttpResult==204) {
                 System.out.println("Delete "+DeletID+" successfully!");
+                suc=true;
             }
             else {
                 System.out.println("Delete failed!");
+                suc=false;
             }
             RFID.removeElementAt(0);
+        }
+        if(suc ==true)
+        {
+        //	System.out.println("Test true");  
+        	return true;
+        }
+        else
+        {
+        //	System.out.println("Test false");  
+        	return false;
         }
     }
 }

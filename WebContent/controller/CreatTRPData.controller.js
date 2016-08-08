@@ -6,9 +6,10 @@ sap.ui.define([
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.CreatTRPData", {
 	   onInit : function () {
-		  
+		   var oModel = new JSONModel({data: {}});
+		   this.getView().setModel(oModel);
 	      },	     
-	      CreatMasterData:function(){
+	     CreatMasterData:function(){
 	    	 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 	    	 oRouter.navTo("MainMenu");
 	     },
@@ -25,23 +26,56 @@ sap.ui.define([
 	     CreatLocationFilter:function()
 	     {
 	    	// alert("Username or Password Wrong! ");
-	    	 var URL="http://localhost:8080/getting-started-sample/rest/UserService/CLF";
-	 		 var name=jQuery.sap.syncGet(URL);
+	    	 var self = this;
+	    	 var params="No thing now!";
+	    	 
+	    	 $.post("/getting-started-sample/rest/UserService/CLF",params, function(result)
+	    	{
+	    		 console.log(result);	    		
+	    		 self.getView().byId("getLValue").setText(result);
+	    			 })
+	    	// var URL="http://localhost:8080/getting-started-sample/rest/UserService/CLF";
+	 		// var name=jQuery.sap.syncGet(URL);
 	     },
 	     DeleteLocalFilter : function()
 	     {
-	    	 var URL="http://localhost:8080/getting-started-sample/rest/UserService/DLF";
-	 		 var name=jQuery.sap.syncGet(URL);
+	    	 var self = this;
+	    	 var params="No thing now!";
+	    	 
+	    	 $.post("/getting-started-sample/rest/UserService/DLF",params, function(result)
+	    	{
+	    		 console.log(result);	    		
+	    		 self.getView().byId("getLValue").setText(result);
+	    			 })
+	    	 //var URL="http://localhost:8080/getting-started-sample/rest/UserService/DLF";
+	 		 //var name=jQuery.sap.syncGet(URL);
 	     },
 	     CreatResourceFilter:function()
 	     {
-	    	 var URL="http://localhost:8080/getting-started-sample/rest/UserService/CRF";
-	 		 var name=jQuery.sap.syncGet(URL);
+	    	 var self = this;
+	    	 var params="No thing now!";
+	    	 
+	    	 $.post("/getting-started-sample/rest/UserService/CRF",params, function(result)
+	    	{
+	    		 console.log(result);	    		
+	    		 self.getView().byId("getRValue").setText(result);
+	    			 })
+	    			 
+	    	// var URL="http://localhost:8080/getting-started-sample/rest/UserService/CRF";
+	 		// var name=jQuery.sap.syncGet(URL);
 	     },
 	     DeleteResourceFilter:function()
 	     {
-	    	 var URL="http://localhost:8080/getting-started-sample/rest/UserService/DRF";
-	 		 var name=jQuery.sap.syncGet(URL);
+	    	 var self = this;
+	    	 var params="No thing now!";
+	    	 
+	    	 $.post("/getting-started-sample/rest/UserService/DRF",params, function(result)
+	    	{
+	    		 console.log(result);	    		
+	    		 self.getView().byId("getRValue").setText(result);
+	    			 })
+	    	// var URL="http://localhost:8080/getting-started-sample/rest/UserService/DRF";
+	 		// var name=jQuery.sap.syncGet(URL);
 	     }
 	    
    });

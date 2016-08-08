@@ -38,7 +38,7 @@
 	                <OverflowToolbarLayoutData priority="Low" />
 	            </layoutData>
 	        </Button>
-	        <tnt:ToolHeaderUtilitySeparator />
+	     	<tnt:ToolHeaderUtilitySeparator />
 	        <ToolbarSpacer>
 	            <layoutData>
 	                <OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
@@ -53,26 +53,26 @@
 	    <Panel headerText="LocationFilter">
 		    <content>
 		    <layout:HorizontalLayout>
-				<layout:VerticalLayout>
-				
+				<layout:VerticalLayout>				
 						<Button id="CreatLFBtn" text="Create" style="Emph" press="CreatLocationFilter"/>
-				        <Button id="DeleteLFBtn" text="Delete" style="Emph" press="DeleteLocalFilter"/>					
-					
+				        <Button id="DeleteLFBtn" text="Delete" style="Emph" press="DeleteLocalFilter"/>										
 				</layout:VerticalLayout>
-				<TextArea value="  " rows="4" cols="40"/>
+				<TextArea value="  " rows="4" cols="30" class="sapUiSmallMarginBegin"/>
+				<Text id="getLValue" text=" " class="sapUiSmallMargin"/>
 		  	</layout:HorizontalLayout>
 			</content>	    	
 		</Panel>
 		
 		<Panel headerText="ResourceFilter">
 		    <content>
-		    <layout:HorizontalLayout>
-				<layout:VerticalLayout>
-					<Button id="CreateRFBtn" text="Create" style="Emph" press="CreatResourceFilter"/>
-				    <Button id="DeleteRFBtn" text="Delete" style="Emph" press="DeleteResourceFilter"/>		
-				</layout:VerticalLayout>
-				<TextArea value="  " rows="4" cols="40"/>
-		  </layout:HorizontalLayout>
+			    <layout:HorizontalLayout>
+					<layout:VerticalLayout>
+						<Button id="CreateRFBtn" text="Create" style="Emph" press="CreatResourceFilter"/>
+					    <Button id="DeleteRFBtn" text="Delete" style="Emph" press="DeleteResourceFilter"/>		
+					</layout:VerticalLayout>
+					<TextArea value="  " rows="4" cols="30" class="sapUiSmallMarginBegin"/>
+					<Text id="getRValue" text=" " class="sapUiSmallMargin"/>
+			    </layout:HorizontalLayout>
 			</content>	    	
 		</Panel>
 	</Page>

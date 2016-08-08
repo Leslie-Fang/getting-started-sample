@@ -1,0 +1,10 @@
+#for tests only !
+#Mon Jun 27 17:30:44 CST 2016
+jco.client.lang=en
+jco.destination.peak_limit=10
+jco.client.client=800
+jco.client.passwd=Welcome123#
+jco.client.user=i306038
+jco.client.sysnr=01
+jco.destination.pool_capacity=3
+jco.client.ashost=10.58.185.69

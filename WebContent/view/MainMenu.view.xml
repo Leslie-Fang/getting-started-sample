@@ -9,6 +9,7 @@
    xmlns:unified="sap.ui.unified"
    xmlns:ux3="sap.ui.ux3"
    xmlns:tnt="sap.tnt"
+   xmlns:table="sap.ui.table"
    displayBlock="true">
    <Page title="{i18n>homePageTitle}">
 		 <tnt:ToolHeader>
@@ -51,6 +52,161 @@
         </Button>
  
     </tnt:ToolHeader>
-	</Page>
-   
+    
+    <layout:VerticalLayout>
+    
+     		<layout:HorizontalLayout>
+			<Button id="Look" text="Create" style="Emph" press="CreatMasterData"/>
+			</layout:HorizontalLayout>
+			
+			<Text id="CreatMasterData" text=" " class="sapUiTinyMargin"/>
+			
+			<table:Table title="Forwarding Order" rows="{path: 'test>/'}" visibleRowCountMode="Auto" minAutoRowCount="5"
+			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected">
+				<table:columns>
+					<table:Column>
+						<table:label>
+							<Label text="DB_KEY" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test>DB_KEY}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="TRQ_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test>TRQ_ID}" />
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+			
+			<Text text=" " class="sapUiTinyMargin"/>
+			<table:Table title="Transportation Unit" rows="{path: 'test3>/'}" visibleRowCountMode="Auto" minAutoRowCount="5"
+			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected">
+				<table:columns>
+					<table:Column>
+						<table:label>
+							<Label text="DB_KEY" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test3>DB_KEY}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="TOR_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test3>TOR_ID}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="MOVEMENT_CAT" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test3>MOVEMENT_CAT}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="VOYAGE_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test3>VOYAGE_ID}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="SCH_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test3>SCH_ID}" />
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+			
+			<Text text=" " class="sapUiTinyMargin"/>
+			<table:Table title="Freight Order" rows="{path: 'test4>/'}" visibleRowCountMode="Auto" minAutoRowCount="5"
+			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected">
+				<table:columns>
+					<table:Column>
+						<table:label>
+							<Label text="DB_KEY" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test4>DB_KEY}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="TOR_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test4>TOR_ID}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="MOVEMENT_CAT" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test4>MOVEMENT_CAT}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="VOYAGE_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test4>VOYAGE_ID}" />
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<table:label>
+							<Label text="SCH_ID" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{test4>SCH_ID}" />
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+			
+			
+			<!-- <layout:HorizontalLayout>	
+				<Button id="Look2" text="TestABAP" style="Emph" press="TestABAP"/>
+				<Text id="TestABAP" text=" " class="sapUiSmallMargin"/>
+			</layout:HorizontalLayout>	
+			 
+			 <table:Table rows="{path: 'TestABAPData>/'}" visibleRowCountMode="Auto" minAutoRowCount="3"
+			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected">
+				<table:columns>
+					<table:Column>
+						<table:label>
+							<Label text="LOCATION" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{TestABAPData>LOCATION}" />
+						</table:template>
+					</table:Column>
+					
+					<table:Column>
+						<table:label>
+							<Label text="LONGITUDE" tooltip="show" />
+						</table:label>
+						<table:template>
+							<common:TextView text="{TestABAPData>LONGITUDE}" />
+						</table:template>
+					</table:Column>
+					
+				</table:columns>
+			</table:Table>-->
+			
+		 </layout:VerticalLayout>		 
+	</Page>      
  </mvc:View>
