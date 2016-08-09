@@ -218,4 +218,22 @@ public class UserService {
 	   System.out.println("success!");
 	   return result;
    }
+   
+   @POST
+   @Path("/GetTU")
+   @Produces("application/json")
+   public String getTU(String message){
+	   System.out.println(message);
+	   String result=" ";
+	   try{
+		   getTU a= new getTU();
+		   a.getData(message);
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "failed!";
+	   };
+	   System.out.println("success!");
+	   return result;
+   }
 }

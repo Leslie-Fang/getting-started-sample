@@ -55,14 +55,14 @@
     	 <layout:VerticalLayout>
 			<Button id="Look" text="ResourceCategory" style="Emph" press="LookResourceCategory"/>
 			
-			<table:Table rows="{path: 'test>/'}" firstVisibleRow="3" visibleRowCount="5">
+			<table:Table rows="{path: 'test>/'}" firstVisibleRow="3" visibleRowCount="5" cellClick="mycelltest">
 				<table:columns>
 					<table:Column>
 						<table:label>
 							<Label text="ResourceCategory" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test>key}" />
+							<Link id="ath" text="{test>key}"/>
 						</table:template>
 					</table:Column>
 
@@ -77,7 +77,7 @@
 							<Label text="ResourceType" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test>key}" />
+							<Link text="{test>key}" press="test"/>
 						</table:template>
 					</table:Column>
 				</table:columns>

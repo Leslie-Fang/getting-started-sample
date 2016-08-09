@@ -1,7 +1,8 @@
 sap.ui.define([
    "sap/ui/core/mvc/Controller",
    "sap/ui/model/json/JSONModel",
-   "sap/ui/model/resource/ResourceModel"
+   "sap/ui/model/resource/ResourceModel",
+   "sap/ui/model/Context"
 ], function (Controller,JSONModel, ResourceModel) {
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.ShowMData", {
@@ -38,6 +39,27 @@ sap.ui.define([
 	    		 var oModel = new JSONModel(result);	
 	    		 self.getView().setModel(oModel,"test");
 	    			 })
+	     },
+	     test : function(evt)
+	     {
+	    	/* var test="abc";
+	    	 console.log(test);
+	    	 var a=evt.getParameters();
+	    	 var b=evt.getParameters().id;
+	    	 var c=this.getView().byId("Look");
+	    	 var d=this.getView().byId(b);
+	    	 alert(" ... ");
+	    	 */
+	     },
+	     mycelltest : function(evt)
+	     {
+	    	// var a=this.getParameters.rowIndex();
+	    	 //var a=new sap.ui.base.event();
+	    	 var a=evt.getParameters();
+	    	 var b=evt.getParameters().rowIndex;
+	    	 var c=evt.getParameters().rowBindingContext;
+	    	 var d=c.getModel().oData[b].key;
+	    	// alert(" ... ");
 	     }
    });
 });

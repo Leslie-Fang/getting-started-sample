@@ -69,7 +69,7 @@
 							<Label text="DB_KEY" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test>DB_KEY}" />
+							<Link text="{test>DB_KEY}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -77,7 +77,7 @@
 							<Label text="TRQ_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test>TRQ_ID}" />
+							<Link text="{test>TRQ_ID}" />
 						</table:template>
 					</table:Column>
 				</table:columns>
@@ -85,14 +85,14 @@
 			
 			<Text text=" " class="sapUiTinyMargin"/>
 			<table:Table title="Transportation Unit" rows="{path: 'test3>/'}" visibleRowCountMode="Auto" minAutoRowCount="5"
-			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected">
+			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected" cellClick="getTU">
 				<table:columns>
 					<table:Column>
 						<table:label>
 							<Label text="DB_KEY" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test3>DB_KEY}" />
+							<Link id="LinkTU1" text="{test3>DB_KEY}" press="SelectTU"/>
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -100,7 +100,7 @@
 							<Label text="TOR_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test3>TOR_ID}" />
+							<Link text="{test3>TOR_ID}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -108,7 +108,7 @@
 							<Label text="MOVEMENT_CAT" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test3>MOVEMENT_CAT}" />
+							<Link text="{test3>MOVEMENT_CAT}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -116,7 +116,7 @@
 							<Label text="VOYAGE_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test3>VOYAGE_ID}" />
+							<Link text="{test3>VOYAGE_ID}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -124,7 +124,7 @@
 							<Label text="SCH_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test3>SCH_ID}" />
+							<Link text="{test3>SCH_ID}" />
 						</table:template>
 					</table:Column>
 				</table:columns>
@@ -139,7 +139,7 @@
 							<Label text="DB_KEY" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test4>DB_KEY}" />
+							<Link text="{test4>DB_KEY}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -147,7 +147,7 @@
 							<Label text="TOR_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test4>TOR_ID}" />
+							<Link text="{test4>TOR_ID}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -155,7 +155,7 @@
 							<Label text="MOVEMENT_CAT" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test4>MOVEMENT_CAT}" />
+							<Link text="{test4>MOVEMENT_CAT}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -163,7 +163,7 @@
 							<Label text="VOYAGE_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test4>VOYAGE_ID}" />
+							<Link text="{test4>VOYAGE_ID}" />
 						</table:template>
 					</table:Column>
 					<table:Column>
@@ -171,7 +171,7 @@
 							<Label text="SCH_ID" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test4>SCH_ID}" />
+							<Link text="{test4>SCH_ID}" />
 						</table:template>
 					</table:Column>
 				</table:columns>

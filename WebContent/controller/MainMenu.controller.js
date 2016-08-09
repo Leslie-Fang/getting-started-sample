@@ -39,7 +39,7 @@ sap.ui.define([
 	     },
 	     CreatMasterData : function()
 	     {
-	    	 this.getView().byId("CreatMasterData").setText("Calling ABAP!");
+	    	 this.getView().byId("CreatMasterData").setText("Calling ABAP ....");
 	    	 var self = this;
 	    	 var params="No thing now!";
 	    	 
@@ -70,7 +70,7 @@ sap.ui.define([
 		 	// var name=jQuery.sap.syncGet(URL);
 	    	 var self = this;
 	    	 var params="No thing now!";
-	    	 this.getView().byId("TestABAP").setText("Calling ABAP!");
+	    	 this.getView().byId("TestABAP").setText("Calling ABAP ....");
 	    	 $.post("/getting-started-sample/rest/UserService/TESTABAPT",params, function(result)
 	    	{
 	    	   console.log(result);
@@ -80,6 +80,25 @@ sap.ui.define([
 	    	//	 var oModel = new JSONModel(result);	
 	    		// self.getView().setModel(oModel,"TestABAPData");
 	    			 })
+	     },
+	     SelectTU : function ()
+	     {
+	    	/* var test="abc";
+	    	 console.log(test);
+	    	 this.getView().byId("LinkTU1").setText("Success!");
+	    	 alert(" ... ");
+	    	 */
+	     },
+	     getTU: function(evt)
+	     {
+	    	 var a=evt.getParameters();
+	    	 var b=evt.getParameters().rowIndex;
+	    	 var c=evt.getParameters().rowBindingContext;
+	    	 var d=c.getModel().oData[b].DB_KEY;
+	    	 $.post("/getting-started-sample/rest/UserService/GetTU",d, function(result)
+	    		    	{
+	    		    		 console.log(result);})
 	     }
+	     
    });
 });
