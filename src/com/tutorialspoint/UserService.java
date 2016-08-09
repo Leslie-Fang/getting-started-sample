@@ -218,7 +218,7 @@ public class UserService {
 	   System.out.println("success!");
 	   return result;
    }
-   
+
    @POST
    @Path("/GetTU")
    @Produces("application/json")
@@ -227,6 +227,42 @@ public class UserService {
 	   String result=" ";
 	   try{
 		   getTU a= new getTU();
+		   a.getData(message);
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "failed!";
+	   };
+	   System.out.println("success!");
+	   return result;
+   }
+   
+   @POST
+   @Path("/GetFowoder")
+   @Produces("application/json")
+   public String GetFowoder(String message){
+	   System.out.println(message);
+	   String result=" ";
+	   try{
+		   GetFowoder a= new GetFowoder();
+		   a.getData(message);
+	   }
+	   catch(Exception e){
+		   System.out.println(e.toString());
+		   return "failed!";
+	   };
+	   System.out.println("success!");
+	   return result;
+   }
+   
+   @POST
+   @Path("/GetFreoder")
+   @Produces("application/json")
+   public String  GetFreoder(String message){
+	   System.out.println(message);
+	   String result=" ";
+	   try{
+		   GetFreoder a= new  GetFreoder();
 		   a.getData(message);
 	   }
 	   catch(Exception e){

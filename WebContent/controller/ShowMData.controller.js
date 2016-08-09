@@ -40,17 +40,17 @@ sap.ui.define([
 	    		 self.getView().setModel(oModel,"test");
 	    			 })
 	     },
-	     test : function(evt)
+	     /*test : function(evt)
 	     {
-	    	/* var test="abc";
+	    	 var test="abc";
 	    	 console.log(test);
 	    	 var a=evt.getParameters();
 	    	 var b=evt.getParameters().id;
 	    	 var c=this.getView().byId("Look");
 	    	 var d=this.getView().byId(b);
 	    	 alert(" ... ");
-	    	 */
-	     },
+	    	
+	     },*/
 	     mycelltest : function(evt)
 	     {
 	    	// var a=this.getParameters.rowIndex();

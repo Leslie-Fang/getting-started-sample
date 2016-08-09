@@ -81,13 +81,24 @@ sap.ui.define([
 	    		// self.getView().setModel(oModel,"TestABAPData");
 	    			 })
 	     },
+	     /*
 	     SelectTU : function ()
 	     {
-	    	/* var test="abc";
+	    	 var test="abc";
 	    	 console.log(test);
 	    	 this.getView().byId("LinkTU1").setText("Success!");
 	    	 alert(" ... ");
-	    	 */
+	    	 
+	     },*/
+	     getFowoder : function(evt)
+	     {
+	    	 var a=evt.getParameters();
+	    	 var b=evt.getParameters().rowIndex;
+	    	 var c=evt.getParameters().rowBindingContext;
+	    	 var d=c.getModel().oData[b].DB_KEY;
+	    	 $.post("/getting-started-sample/rest/UserService/GetFowoder",d, function(result)
+	    		    	{
+	    		    		 console.log(result);})
 	     },
 	     getTU: function(evt)
 	     {
@@ -96,6 +107,16 @@ sap.ui.define([
 	    	 var c=evt.getParameters().rowBindingContext;
 	    	 var d=c.getModel().oData[b].DB_KEY;
 	    	 $.post("/getting-started-sample/rest/UserService/GetTU",d, function(result)
+	    		    	{
+	    		    		 console.log(result);})
+	     },
+	     getFreoder : function(evt)
+	     {
+	    	 var a=evt.getParameters();
+	    	 var b=evt.getParameters().rowIndex;
+	    	 var c=evt.getParameters().rowBindingContext;
+	    	 var d=c.getModel().oData[b].DB_KEY;
+	    	 $.post("/getting-started-sample/rest/UserService/GetFreoder",d, function(result)
 	    		    	{
 	    		    		 console.log(result);})
 	     }
