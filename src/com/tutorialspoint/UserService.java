@@ -209,7 +209,7 @@ public class UserService {
 	   String result;
 	   try{
 		   TestMyAbap  a=new TestMyAbap();
-		   result=a.test();
+		   result=a.test(message);
 	   }
 	   catch(Exception e){
 		   System.out.println(e.toString());

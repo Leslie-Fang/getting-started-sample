@@ -18,7 +18,7 @@
 	            </layoutData>
 	        </Button>
 	        <ToolbarSpacer width="20px" />
-	        <Button text="CreatMData" type="Transparent" press="CreatMasterData">
+	        <Button text="CreateMData" type="Transparent" press="CreatMasterData">
 	            <layoutData>
 	                <OverflowToolbarLayoutData priority="Low" />
 	            </layoutData>
@@ -28,12 +28,7 @@
 	                <OverflowToolbarLayoutData priority="Low" />
 	            </layoutData>
 	        </Button>
-	        <Button text="CreatTRPData" type="Transparent" press="CreatTRPData">
-	            <layoutData>
-	                <OverflowToolbarLayoutData priority="Low" />
-	            </layoutData>
-	        </Button>
-	        <Button text="Navigate" type="Transparent">
+	        <Button text="CreateTRPData" type="Transparent" press="CreatTRPData">
 	            <layoutData>
 	                <OverflowToolbarLayoutData priority="Low" />
 	            </layoutData>
@@ -50,7 +45,7 @@
 	            </layoutData>
 	        </Button>
 	    </tnt:ToolHeader>
-	    <Panel headerText="LocationFilter">
+	    <Panel expandable="true" expanded="false" headerText="LocationFilter">
 		    <content>
 		    <layout:HorizontalLayout>
 				<layout:VerticalLayout>				
@@ -63,7 +58,7 @@
 			</content>	    	
 		</Panel>
 		
-		<Panel headerText="ResourceFilter">
+		<Panel expandable="true" expanded="false" headerText="ResourceFilter">
 		    <content>
 			    <layout:HorizontalLayout>
 					<layout:VerticalLayout>
@@ -74,7 +69,7 @@
 					<Text id="getRValue" text=" " class="sapUiSmallMargin"/>
 			    </layout:HorizontalLayout>
 			</content>	    	
-		</Panel>
+		</Panel>		
 	</Page>
    
  </mvc:View>

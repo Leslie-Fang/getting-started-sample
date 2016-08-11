@@ -13,14 +13,14 @@
    displayBlock="true">
 
    <Page title="{i18n>homePageTitle}">
-		 <tnt:ToolHeader>
+		<tnt:ToolHeader>
         <Button icon="sap-icon://menu2" type="Transparent" >
             <layoutData>
                 <OverflowToolbarLayoutData priority="NeverOverflow" />
             </layoutData>
         </Button>
         <ToolbarSpacer width="20px" />
-        <Button text="CreatMData" type="Transparent" press="CreatMasterData">
+        <Button text="CreateMData" type="Transparent" press="CreatMasterData">
             <layoutData>
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
@@ -30,12 +30,7 @@
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
         </Button>
-        <Button text="CreatTRPData" type="Transparent" press="CreatTRPData">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="Low" />
-            </layoutData>
-        </Button>
-        <Button text="Navigate" type="Transparent">
+        <Button text="CreateTRPData" type="Transparent" press="CreatTRPData">
             <layoutData>
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
@@ -52,6 +47,8 @@
             </layoutData>
         </Button>
      </tnt:ToolHeader>
+     
+     <Panel expandable="true" expanded="false" headerText="ResourceCategory">
     	 <layout:VerticalLayout>
 			<Button id="Look" text="ResourceCategory" style="Emph" press="LookResourceCategory"/>
 			
@@ -68,23 +65,22 @@
 
 				</table:columns>
 			</table:Table>
-					
-					
-			<table:Table rows="{path: 'test>/'}" firstVisibleRow="3" visibleRowCount="5">
+										
+			<!--  <table:Table rows="{path: 'test>/'}" firstVisibleRow="3" visibleRowCount="5">
 				<table:columns>
 					<table:Column>
 						<table:label>
 							<Label text="ResourceType" tooltip="show" />
 						</table:label>
 						<table:template>
-							<common:TextView text="{test>key}"/>
-							<!-- <Link text="{test>key}" press="test"/> -->
+							<common:TextView text="{test>key}"/>							
 						</table:template>
 					</table:Column>
 				</table:columns>
-			</table:Table>
-			
+			</table:Table>-->
+			<!-- <Link text="{test>key}" press="test"/> -->
 		 </layout:VerticalLayout>
+	   </Panel>
 	</Page>
 	
 

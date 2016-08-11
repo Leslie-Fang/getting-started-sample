@@ -12,7 +12,7 @@ public class TestMyAbap {
 
 	static String ABAP_AS_POOLED = "ABAP_AS_WITH_POOL";
 	//public static void main(String args[]) throws JCoException {
-	public String test()throws JCoException {
+	public String test(String input)throws JCoException {
 		String result="[";
 		String result1="[";
 		String result2="[";
@@ -20,6 +20,7 @@ public class TestMyAbap {
 		//String result2="";
 		JCoDestination destination = JCoDestinationManager.getDestination(ABAP_AS_POOLED);
 		JCoFunction function = destination.getRepository().getFunction("ZFM_TRP_AUTO_OUTPUT");
+		System.out.println(input);
 		System.out.println("1!");
 		if (function == null)
 		{
@@ -27,7 +28,8 @@ public class TestMyAbap {
 			throw new RuntimeException("ZFM_TRP_AUTO_OUTPUT not found in SAP.");
 		}
 
-		//function.getImportParameterList().setValue("IM_NUM1", 10);	
+		function.getImportParameterList().setValue("JUDGE", input);
+		
 		System.out.println("2!");
 		try{
 			function.execute(destination);

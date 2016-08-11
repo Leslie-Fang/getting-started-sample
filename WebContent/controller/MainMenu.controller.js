@@ -21,7 +21,14 @@ sap.ui.define([
 		   var oData2=[{"LOCATION":"A","LONGITUDE":"B"}];
 		   var oModel2 = new JSONModel(oData2);
 		   this.getView().setModel(oModel2,"TestABAPData");	
+		   
+		   var oModel5= new JSONModel({ "Recatoy":"RC"
+			});
+			this.getView().setModel(oModel5, "Rcategory");
 		  
+		   //this model write in the manifest.json 
+		   //var oModel5 = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.wt", "/category.json"));
+		   //this.getView().setModel(oModel5,"category");
 	      },	     
 	      CreatMasterData:function(){
 	    	 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -37,12 +44,14 @@ sap.ui.define([
 	    	 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 	    	 oRouter.navTo("CreatTRPData");
 	     },
-	     CreatMasterData : function()
+	     CreatMasterDatafunc : function()
 	     {
 	    	 this.getView().byId("CreatMasterData").setText("Calling ABAP ....");
 	    	 var self = this;
-	    	 var params="No thing now!";
-	    	 
+	    	 var view = this.getView();
+	    	 //var params = view.getModel("Rcategory").getProperty("/Recatoy");
+	    	 var params=view.byId("MyCombo").getSelectedKey();
+	    	 if(params==""){params="RC";}
 	    	 $.post("/getting-started-sample/rest/UserService/MyABAPT",params, function(result)
 	    	 {
 	    		 console.log(result);

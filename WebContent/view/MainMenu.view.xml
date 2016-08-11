@@ -19,7 +19,7 @@
             </layoutData>
         </Button>
         <ToolbarSpacer width="20px" />
-        <Button text="CreatMData" type="Transparent" press="CreatMasterData">
+        <Button text="CreateMData" type="Transparent" press="CreatMasterData">
             <layoutData>
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
@@ -29,12 +29,7 @@
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
         </Button>
-        <Button text="CreatTRPData" type="Transparent" press="CreatTRPData">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="Low" />
-            </layoutData>
-        </Button>
-        <Button text="Navigate" type="Transparent">
+        <Button text="CreateTRPData" type="Transparent" press="CreatTRPData">
             <layoutData>
                 <OverflowToolbarLayoutData priority="Low" />
             </layoutData>
@@ -45,7 +40,8 @@
                 <OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
             </layoutData>
         </ToolbarSpacer>
-        <Button text="TRP" type="Transparent" press="handleUserNamePress">
+         <Button text="TRP" type="Transparent" press="handleUserNamePress"> 
+       
             <layoutData>
                 <OverflowToolbarLayoutData priority="NeverOverflow" />
             </layoutData>
@@ -53,13 +49,21 @@
  
     </tnt:ToolHeader>
     
+    
     <layout:VerticalLayout>
     
-     		<layout:HorizontalLayout>
-			<Button id="Look" text="Create" style="Emph" press="CreatMasterData"/>
-			</layout:HorizontalLayout>
-			
-			<Text id="CreatMasterData" text=" " class="sapUiTinyMargin"/>
+
+			    <layout:HorizontalLayout>
+			    <ComboBox id = "MyCombo" items="{
+						path: 'category>/Invoices'
+					}" >
+					<core:Item key="{category>ProductName}" text="{category>ProductName}" />
+				</ComboBox>
+				<Text text=" " class="sapUiTinyMargin"/>
+				<Button id="Look" text="Create" style="Emph" press="CreatMasterDatafunc"/>
+				<Text text=" " class="sapUiTinyMargin"/>
+				<Text id="CreatMasterData" text=" " class="sapUiTinyMargin"/>
+				</layout:HorizontalLayout>
 			
 			<table:Table title="Forwarding Order" rows="{path: 'test>/'}" visibleRowCountMode="Auto" minAutoRowCount="5"
 			selectionMode="Single" selectionBehavior="Row" rowSelectionChange="onRowSelected" cellClick="getFowoder">
